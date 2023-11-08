@@ -93,3 +93,6 @@ export const getPokemonById = (id) => {
   return Promise.resolve(Pokemons.find((el) => el.id == id));
 };
 
+
+
+

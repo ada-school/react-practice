@@ -3,20 +3,18 @@ import "../styles/Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
   return (
     <>
       <div className="header-container">
         <h1 className="tittle">lista de pokemons</h1>
         <ul className="navigate">
           <li>
-            <a href="/equipo-rocket">erronea </a>
-          </li>
-          <li>
-            <a href="/">inicio</a>
+            <Link to="/">inicio</Link>
           </li>
 
           <li>
-            <a href="/about">sobre nosotros</a>
+            <Link to="/about">sobre nosotros</Link>
           </li>
         </ul>
       </div>

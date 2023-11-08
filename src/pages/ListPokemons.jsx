@@ -6,8 +6,6 @@ const ListPokemons = () => {
 
   const [data, setData]= useState([])
 
-  //Cuando se monta el componente por primera vez, hacemos un llamado de todos
-  //los datos y los guardamos en un estado local
   useEffect(() => {
     getAllPokemons().then(res =>setData(res))
   }, []);

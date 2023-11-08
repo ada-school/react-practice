@@ -1,23 +1,30 @@
-import "../styles/Detail.css";
 import { useParams } from "react-router-dom";
+import "../styles/Detail.css";
 import { useEffect, useState } from "react";
 import { getPokemonById } from "../JavaScript/data";
 const Detail = () => {
-  // Extraemos ese param que definimos en el comopnente App.jsx
-  //que sería pokemons/:idPokemon
-  //ya con el id, el cual es una dato relevante, podemos iniciar a trabajar
-  //como lo vemos en el useEffect de este componente
 
-  //Utiliza el hook useParams para extraer la información necesaria de la url
-  //para saber que pokemon debemos buscar
-  //  useParams();
+
+  const { idPokemon } = useParams();
 
   const [data, setData] = useState();
 
-  // useEffect(() => {
-  //    getPokemonById(idPokemon).then((res) => setData(res));
-  // }, [idPokemon]);
+  useEffect(() => {
 
+      getPokemonById(idPokemon).then((res) => setData(res));
+  }, [idPokemon]);
+
+
+  if (!data) {
+
+    return (
+      <>
+        <div className="info-pokemon">
+          <h1>Cargando...</h1>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <div className="container-pokemon">
